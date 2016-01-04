@@ -19,10 +19,19 @@ from django.contrib import admin
 from views import hello
 from views import current_datetime
 from views import hours_ahead
+from views import current_url_view_good
+from views import display_meta
+from views import display_meta_template
+from books import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', hello),
     url(r'^time/$', current_datetime),
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
+    url(r'^request/$', current_url_view_good),
+    url(r'^meta/$', display_meta),
+    url(r'^meta2/$', display_meta_template),
+    url(r'^search-form/$', views.search_form),
+    url(r'^search/$', views.search),
 ]
