@@ -22,7 +22,11 @@ from views import hours_ahead
 from views import current_url_view_good
 from views import display_meta
 from views import display_meta_template
-from books import views
+#from books import views
+#from contact import views
+from books.views import search
+from contact.views import contact, thanks
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -32,6 +36,9 @@ urlpatterns = [
     url(r'^request/$', current_url_view_good),
     url(r'^meta/$', display_meta),
     url(r'^meta2/$', display_meta_template),
-    url(r'^search-form/$', views.search_form),
-    url(r'^search/$', views.search),
+    #url(r'^search-form/$', views.search_form),
+    #url(r'^search/$', views.search),
+    url(r'^search/$', search),
+    url(r'^contact/$', contact),
+    url(r'^contact/thanks/$', thanks),
 ]
